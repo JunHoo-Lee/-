@@ -101,7 +101,6 @@ def build_args():
     )
     # module config
     parser = VarNetModule.add_model_specific_args(parser)
-    """
     parser.set_defaults(
         num_cascades=4,  # number of unrolled iterations
         pools=4,  # number of pooling layers for U-Net
@@ -113,22 +112,7 @@ def build_args():
         lr_gamma=0.1,  # extent to which to decrease learning rate
         weight_decay=0.0,  # weight regularization strength
     )
-    """
-    # module config
-    parser.set_defaults(
-        num_cascades=1,  # number of unrolled iterations
-        pools=4,  # number of pooling layers for U-Net
-        chans=12,  # number of top-level channels for U-Net
-        sens_pools=4,  # number of pooling layers for sense est. U-Net
-        sens_chans=8,  # number of top-level channels for sense est. U-Net
-        lr=0.0003,  # Adam learning rate
-        lr_step_size=40,  # epoch at which to decrease learning rate
-        lr_gamma=0.1,  # extent to which to decrease learning rate
-        weight_decay=0.0,  # weight regularization strength
-    )
-    #""
-
-    # trainer config
+    
     parser = pl.Trainer.add_argparse_args(parser)
     parser.set_defaults(
         gpus=num_gpus,  # number of gpus to use
