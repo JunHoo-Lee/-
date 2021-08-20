@@ -121,7 +121,7 @@ def build_args():
         accelerator=backend,  # what distributed version to use
         deterministic=True,  # makes things slower, but deterministic
         default_root_dir=default_root_dir,  # directory for logs and checkpoints
-        max_epochs=35,  # max number of epochs
+        max_epochs=50,  # max number of epochs
     )
 # 30, 42, 6
     args = parser.parse_args()
